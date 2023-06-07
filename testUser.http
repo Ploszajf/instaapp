@@ -1,0 +1,23 @@
+### POST - dodanie usera
+
+POST http://localhost:3000/api/user/register HTTP/1.1
+content-type: application/json
+
+{
+        "userName": "aba",
+        "name": "fff",
+        "lastName": "ggg",
+        "email": "ccc@dd.eee",
+        "password": "bbb",
+        "passwordRepetation": "bbb"
+}
+
+### POST - logowanie
+
+POST http://localhost:3000/api/user/login HTTP/1.1
+content-type: application/json
+
+{
+        "login": "ccc@dd.eee",
+        "password": "bbb"
+}

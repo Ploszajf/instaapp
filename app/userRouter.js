@@ -26,9 +26,9 @@ const userRouter = async (request, response) => {
             if(loginState){
                 let token = await newtoken(json)
                 response.setHeader('Authorization', 'Bearer '+ token);
-                response.end("Zalogowano")
+                response.end(dataFromPost)
             }else{
-                response.end("Nie udało się zalogować")
+                response.end(dataFromPost)
             }
         }
 

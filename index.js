@@ -11,4 +11,4 @@ http
         tagsRouter(req, res);
         userRouter(req, res);
     })
-    .listen(process.env.APP_PORT, () => console.log(`listen on ${process.env.APP_PORT} <- process.env.APP_PORT`));
+    .listen(process.env.APP_PORT, () => console.log(`listen on ${process.env.PORT} <- process.env.PORT`));

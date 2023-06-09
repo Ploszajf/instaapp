@@ -13,9 +13,10 @@ const userRouter = async (request, response) => {
             const processToken = async () => {
                 let token = await createtoken(tokenData)
                 let link = await verifytoken(token)
+                response.setHeader("Content-Type", "application/json");
                 response.end(link)
             }
-            let registerSucces = await register(json)
+            let registerSucces = await register(json) 
             if(registerSucces){
                 processToken()
             }

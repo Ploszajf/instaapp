@@ -38,9 +38,11 @@ const userRouter = async (request, response) => {
             let token = request.url.split("/").pop();
             let confirmstate = await confirmtoken(token)
             if(confirmstate){
-                response.end("Confirmed")
+                response.setHeader("Content-Type", "application/json");
+                response.end({status: "Confirmed"})
             }else{
-                response.end("Problem with confirmation")
+                response.setHeader("Content-Type", "application/json");
+                response.end({status: "Problem with confirmation"})
             }
         } else if(request.url.match(/\/api\/profile\/([0-9]+)/) && request.method == "GET"){
             let userId = request.url.split("/").pop();

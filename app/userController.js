@@ -38,7 +38,7 @@ module.exports = {
     },
 
     verifytoken: async (token) => {
-            let confirmationLink = {link: `https://instaapp-production-59d6.up.railway.app/api/user/confirm/${token}`}
+            let confirmationLink = {link: `${token}`}
             console.log(token);
             return(JSON.stringify(confirmationLink))
         },

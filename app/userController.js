@@ -39,8 +39,8 @@ module.exports = {
     },
 
     verifytoken: async (token) => {
-            let confirmationLink = `http://localhost:3000/api/user/confirm/${token}`
-            return(confirmationLink)
+            let confirmationLink = {link: `http://localhost:3000/api/user/confirm/${token}`}
+            return(JSON.stringify(confirmationLink))
         },
 
     confirmtoken: async (token) => {

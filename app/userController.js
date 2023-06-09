@@ -34,12 +34,12 @@ module.exports = {
                     expiresIn: "1hr"
                 }
             );
-            console.log({ token: token });
             return token
     },
 
     verifytoken: async (token) => {
             let confirmationLink = {link: `http://localhost:3000/api/user/confirm/${token}`}
+            console.log(token);
             return(JSON.stringify(confirmationLink))
         },
 

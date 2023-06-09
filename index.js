@@ -6,7 +6,6 @@ require('dotenv').config();
 
 http
     .createServer((req, res) => {
-        console.log(req) 
         router(req, res);
         tagsRouter(req, res);
         userRouter(req, res);

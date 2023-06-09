@@ -27,9 +27,9 @@ const userRouter = async (request, response) => {
             if(loginState){
                 let token = await newtoken(json)
                 response.setHeader('Authorization', 'Bearer '+ token);
-                response.end(dataFromPost)
+                response.end(JSON.stringify({state: "true"}))
             }else{
-                response.end(dataFromPost)
+                response.end(JSON.stringify({state: "false"}))
             }
         }
 

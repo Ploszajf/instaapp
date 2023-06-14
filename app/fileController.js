@@ -9,8 +9,16 @@ module.exports = {
         
         const form = formidable({ multiples: true, uploadDir: "upload", keepExtensions: true });
         form.parse(req, (err, fields, files) => {
+
+            album = fields.album.replace(/(\r\n|\n|\r)/gm, "")
+            console.log(`album: ${album}`)
+            oryginalName = files.file.name
+            console(`oryginalName: ${oryginalName}`)
+            url = files.file.path
+            console.log(`url: ${url}`)
+
+
             console.log(err);
-            console.log(fields)
            addjson(fields, files)
         })
     },

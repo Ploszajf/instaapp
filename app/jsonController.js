@@ -7,9 +7,13 @@ module.exports = {
     addjson: (fields, files) => {
         let id, album, oryginalName, url, lastChange, history
         id = uuidv4()
+        console.log(`id: ${id}`)
         album = fields.album.replace(/(\r\n|\n|\r)/gm, "")
+        console.log(`album: ${album}`)
         oryginalName = files.file.name
+        console(`oryginalName: ${oryginalName}`)
         url = files.file.path
+        console.log(`url: ${url}`)
         lastChange = "original"
         history = [ {
             status: "original",

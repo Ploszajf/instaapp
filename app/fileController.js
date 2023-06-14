@@ -9,6 +9,7 @@ module.exports = {
         
         const form = formidable({ multiples: true, uploadDir: "upload", keepExtensions: true });
         form.parse(req, (err, fields, files) => {
+            console.log(err);
             console.log(fields)
            addjson(fields, files)
         })

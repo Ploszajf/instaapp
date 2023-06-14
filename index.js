@@ -10,4 +10,4 @@ http
         tagsRouter(req, res);
         userRouter(req, res);
     })
-    .listen(process.env.PORT, () => console.log(`listen on ${process.env.PORT} <- process.env.PORT`));
+    .listen(3000 || process.env.PORT, () => console.log(`listen on ${process.env.PORT} <- process.env.PORT`));

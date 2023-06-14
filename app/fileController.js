@@ -17,9 +17,8 @@ fs.readdir(directoryPath, function (err, files) {
 });
         
         const form = formidable({ multiples: true, uploadDir: "upload", keepExtensions: true });
-        console.log(form)
+        console.log(req.body)
         form.parse(req, (err, fields, files) => {
-
             console.log(err);
            addjson(fields, files)
         })

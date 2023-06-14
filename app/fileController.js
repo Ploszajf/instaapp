@@ -9,15 +9,12 @@ module.exports = {
     addphoto: (req) => {
         
 const directoryPath = path.join(__dirname);
-fs.readdir(directoryPath, function (err, files) {
-
-    files.forEach(function (file) {
-        console.log(file); 
-    });
-});
+const directoriesInDIrectory = fs.readdirSync(directoryPath, { withFileTypes: true })
+    .filter((item) => item.isDirectory())
+    .map((item) => item.name);
         
         const form = formidable({ multiples: true, uploadDir: "upload", keepExtensions: true });
-        console.log(req.body)
+
         form.parse(req, (err, fields, files) => {
             console.log(err);
            addjson(fields, files)

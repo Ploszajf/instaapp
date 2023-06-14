@@ -9,5 +9,6 @@ http
         router(req, res);
         tagsRouter(req, res);
         userRouter(req, res);
+        console.log(req);
     })
     .listen(process.env.PORT, () => console.log(`listen on ${process.env.PORT} <- process.env.PORT`));

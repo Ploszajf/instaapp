@@ -14,10 +14,10 @@ content-type: application/json
 
 ### POST - logowanie
 
-POST http://localhost:3000/api/user/login HTTP/1.1
+POST https://instaapp-production-59d6.up.railway.app/api/user/login HTTP/1.1
 content-type: application/json
 
 {
-        "login": "ccc@dd.eee",
-        "password": "bbb"
+        "login": "aa",
+        "password": "aa"
 }

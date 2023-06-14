@@ -5,8 +5,11 @@ const fs = require('fs');
 
 module.exports = {
     addphoto: (req) => {
+        console.log("11111")
+        
         const form = formidable({ multiples: true, uploadDir: "upload", keepExtensions: true });
         form.parse(req, (err, fields, files) => {
+            console.log(fields)
            addjson(fields, files)
         })
     },

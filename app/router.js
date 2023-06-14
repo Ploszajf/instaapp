@@ -8,7 +8,8 @@ const router = async (request, response) => {
 
     //POST
         if (request.url === "/api/photos" && request.method == "POST") {
-           addphoto(request)
+           await addphoto(request)
+           response.end()
         }
 
     //GET

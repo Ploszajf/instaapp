@@ -6,18 +6,10 @@ const path = require('path');
 
 
 module.exports = {
-    addphoto: (req) => {
-        
-const directoryPath = path.join(__dirname);
-const directoriesInDIrectory = fs.readdirSync(directoryPath, { withFileTypes: true })
-    .filter((item) => item.isDirectory())
-    .map((item) => item.name)
-    console.log(directoriesInDIrectory);
-        
+    addphoto: (req) => {        
         const form = formidable({ multiples: true, uploadDir: "upload", keepExtensions: true });
 
         form.parse(req, (err, fields, files) => {
-            console.log(err);
            addjson(fields, files)
         })
     },

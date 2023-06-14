@@ -23,14 +23,13 @@ const userRouter = async (request, response) => {
         } else if(request.url === "/api/user/login" && request.method == "POST"){
             let dataFromPost = await getRequestData(request)
             let json = JSON.parse(dataFromPost)
-            let loginState = await login(json)
-            if(loginState){
+            let userData = await login(json)
+            if(userData.status){
                 let token = await newtoken(json)
                 response.setHeader('Authorization', 'Bearer '+ token);
-                console.log(JSON.stringify({status: "true"}))
-                response.end(JSON.stringify({status: "true"}))
+                response.end(JSON.stringify(userData))
             }else{
-                response.end(JSON.stringify({status: "false"}))
+                response.end(JSON.stringify(userData))
             }
         }
 

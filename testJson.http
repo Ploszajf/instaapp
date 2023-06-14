@@ -19,7 +19,7 @@ nazwa_albumu
 
 
 ### GET - pobierz wszystkie dane
-GET https://instaapp-production-59d6.up.railway.app/api/photos HTTP/1.1
+GET http://localhost:3000/api/photos HTTP/1.1
 
 ### GET - pobierz jeden element wg id
 GET http://localhost:3000/api/photos/0 HTTP/1.1

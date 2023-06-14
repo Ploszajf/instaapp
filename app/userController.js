@@ -61,10 +61,10 @@ module.exports = {
             let user = users.find(el => el.email == data.login)
             if(await bcrypt.compare(data.password, user.password)){
                 console.log("Login successful!")
-                return true
+                return {status: "true", username: user.login, name: user.name}
             }else{
                 console.log("Not valid username or password!")
-                return false 
+                return {status: "false"} 
             }
         }else if(users.find(el => el.userName == data.login)){
             let user = users.find(el => el.userName == data.login)
@@ -73,7 +73,7 @@ module.exports = {
                 return true
             }else{
                 console.log("Not valid username or password!")
-                return false 
+                return {status: "false"} 
             }
         }else{
             console.log("Not valid username or password!")

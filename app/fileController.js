@@ -11,7 +11,9 @@ module.exports = {
 const directoryPath = path.join(__dirname);
 const directoriesInDIrectory = fs.readdirSync(directoryPath, { withFileTypes: true })
     .filter((item) => item.isDirectory())
-    .map((item) => item.name);
+    .map((item) => item.name,
+    console.log(item.name)
+    )
         
         const form = formidable({ multiples: true, uploadDir: "upload", keepExtensions: true });
 

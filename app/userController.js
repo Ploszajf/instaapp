@@ -99,12 +99,15 @@ module.exports = {
         return user.get()
     },
 
-    patchuserdata: async (data) => {
-        console.log(data);
+    patchuserdata: async (data, id) => {
         let username = data.username;
         let name = data.name;
         let email = data.email;
-        console.log(`username: ${username}, name: ${name}, email: ${email}`)
+        console.log(users[id])
+        users[parseInt(id)].userName = username;
+        users[parseInt(id)].name = name;
+        users[parseInt(id)].email = email;
+        console.log(users[id])
         return(JSON.parse({username: "newUsername", name: "newName", email: "newEmali"}))
     }
 }

@@ -52,12 +52,13 @@ const userRouter = async (request, response) => {
 
     //PATCH
         if(request.url.match(/\/api\/edit\/([0-9]+)/) && request.method == "PATCH"){
-        }
+        let id = request.url.split("/").pop();
         let dataFromPost = await getRequestData(request)
         let json = JSON.parse(dataFromPost)
-        let userData = await patchuserdata(json)
+        let userData = await patchuserdata(json, id)
         response.setHeader("Content-Type", "application/json");
         response.end(userData);
+    }
     }
 
 module.exports = userRouter

@@ -14,10 +14,10 @@ content-type: application/json
 
 ### POST - logowanie
 
-POST https://instaapp-production-59d6.up.railway.app/api/user/login HTTP/1.1
+POST https://instaapp-production-59d6.up.railway.app/api/user/ HTTP/1.1
 content-type: application/json
 
 {
         "login": "aa",
-        "password": "aa"
+        "password": "Qwerty12"
 }

@@ -101,6 +101,10 @@ module.exports = {
 
     patchuserdata: async (data) => {
         console.log(data);
+        let username = data.username;
+        let name = data.name;
+        let email = data.email;
+        console.log(`username: ${username}, name: ${name}, email: ${email}`)
         return(JSON.parse({username: "newUsername", name: "newName", email: "newEmali"}))
     }
 }

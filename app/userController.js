@@ -97,5 +97,10 @@ module.exports = {
     getuserdata: async (userId) => {
         let user = users.find(el => el.id == userId)
         return user.get()
+    },
+
+    patchUserData: async (data) => {
+        console.log(data);
+        return(JSON.parse({username: "newUsername", name: "newName", email: "newEmali"}))
     }
 }

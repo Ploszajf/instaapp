@@ -104,13 +104,12 @@ module.exports = {
         let name = data.name;
         let email = data.email;
         let usernameExist = users.find(el => el.userName == username)
-        let nameExist = users.find(el => el.userName == username)
         let emailExist = users.find(el => el.userName == username)
         if(!(usernameExist == undefined)){
-            username = exist;
+            username = "exist";
         }
         if(!(emailExist == undefined)){
-            email = exist;
+            email = "exist";
         }
         users[parseInt(id)].userName = username;
         users[parseInt(id)].name = name;

@@ -57,7 +57,7 @@ const userRouter = async (request, response) => {
         let json = JSON.parse(dataFromPost)
         let userData = await patchuserdata(json, id)
         response.setHeader("Content-Type", "application/json");
-        response.end(userData);
+        response.end(JSON.stringify(userData));
     }
     }
 

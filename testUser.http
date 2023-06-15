@@ -4,9 +4,9 @@ POST https://instaapp-production-59d6.up.railway.app/api/user/register HTTP/1.1
 content-type: application/json
 
 {
-        "userName": "dbb",
+        "userName": "da",
         "name": "Topowy Brek",
-        "email": "cc@dd.eee",
+        "email": "ccc@dd.eee",
         "password": "Qwerty12",
         "passwordRepetation": "Qwerty12"
 }

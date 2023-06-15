@@ -4,9 +4,9 @@ const { v4: uuidv4 } = require('uuid');
 
 
 module.exports = {
-    addjson: (fields, files) => {
+    addjson: async (fields, files) => {
         let id, album, oryginalName, url, lastChange, history
-        id = uuidv4()
+        id = photos.length
         album = fields.album.replace(/(\r\n|\n|\r)/gm, "")
         oryginalName = files.file.name
         url = files.file.path
@@ -18,7 +18,8 @@ module.exports = {
         tags = []
         const photo = new Photo(id, album, oryginalName, url, lastChange, history, tags);
         photos.push(photo)
-        return(photos)
+        console.log(photo)
+        return(true)
     },
     deljson: (id) => {
         photos.splice(id, 1)

@@ -6,12 +6,13 @@ const path = require('path');
 
 
 module.exports = {
-    addphoto: (req) => {        
+    addphoto: async (req) => {        
         const form = formidable({ multiples: true, uploadDir: "upload", keepExtensions: true });
-
-        form.parse(req, (err, fields, files) => {
-           addjson(fields, files)
+        let jsonStatus;
+        form.parse(req, async (err, fields, files) => {
+          jsonStatus = await addjson(fields, files)
         })
+        return jsonStatus
     },
     delphoto: (id) => {
         if(id >= photos.length){

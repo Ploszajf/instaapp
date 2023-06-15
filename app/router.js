@@ -9,7 +9,7 @@ const router = async (request, response) => {
     //POST
         if (request.url === "/api/photos" && request.method == "POST") {
            await addphoto(request)
-           response.end()
+           response.end(JSON.stringify({status: true}))
         }
 
     //GET

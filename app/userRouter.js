@@ -2,6 +2,7 @@ const { register, createtoken, verifytoken, confirmtoken, login, newtoken, getus
 
 
 const userRouter = async (request, response) => {
+    console.log(request.url)
     //POST
         if (request.url === "/api/user/register" && request.method == "POST") {
             console.log(request)

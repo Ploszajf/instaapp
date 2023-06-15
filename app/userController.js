@@ -103,6 +103,8 @@ module.exports = {
         let username = data.username;
         let name = data.name;
         let email = data.email;
+        let user = users.find(el => el.userName == username)
+        console.log(user);
         console.log(users[id])
         users[parseInt(id)].userName = username;
         users[parseInt(id)].name = name;

@@ -103,9 +103,15 @@ module.exports = {
         let username = data.username;
         let name = data.name;
         let email = data.email;
-        let user = users.find(el => el.userName == username)
-        console.log(user);
-        console.log(users[id])
+        let usernameExist = users.find(el => el.userName == username)
+        let nameExist = users.find(el => el.userName == username)
+        let emailExist = users.find(el => el.userName == username)
+        if(!(usernameExist == undefined)){
+            username = exist;
+        }
+        if(!(emailExist == undefined)){
+            email = exist;
+        }
         users[parseInt(id)].userName = username;
         users[parseInt(id)].name = name;
         users[parseInt(id)].email = email;

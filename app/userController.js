@@ -99,7 +99,7 @@ module.exports = {
         return user.get()
     },
 
-    patchUserData: async (data) => {
+    patchuserdata: async (data) => {
         console.log(data);
         return(JSON.parse({username: "newUsername", name: "newName", email: "newEmali"}))
     }

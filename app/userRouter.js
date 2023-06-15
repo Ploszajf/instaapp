@@ -1,4 +1,4 @@
-const { register, createtoken, verifytoken, confirmtoken, login, newtoken, getuserdata } = require('./userController')
+const { register, createtoken, verifytoken, confirmtoken, login, newtoken, getuserdata, patchuserdata } = require('./userController')
 
 
 const userRouter = async (request, response) => {

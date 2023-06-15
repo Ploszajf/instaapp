@@ -108,6 +108,6 @@ module.exports = {
         users[parseInt(id)].name = name;
         users[parseInt(id)].email = email;
         console.log(users[id])
-        return({username: "newUsername", name: "newName", email: "newEmali"})
+        return({username: username, name: name, email: email})
     }
 }

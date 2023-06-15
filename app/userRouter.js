@@ -2,10 +2,8 @@ const { register, createtoken, verifytoken, confirmtoken, login, newtoken, getus
 
 
 const userRouter = async (request, response) => {
-    console.log(request.url)
     //POST
         if (request.url === "/api/user/register" && request.method == "POST") {
-            console.log(request)
             let dataFromPost = await getRequestData(request)
             let json = JSON.parse(dataFromPost)
             let userName = json.userName

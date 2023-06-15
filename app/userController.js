@@ -61,7 +61,7 @@ module.exports = {
             let user = users.find(el => el.email == data.login)
             if(await bcrypt.compare(data.password, user.password)){
                 console.log("Login successful!")
-                return {status: "true", username: user.login, name: user.name}
+                return {status: "true", username: user.userName, name: user.name, email: user.email}
             }else{
                 console.log("Not valid username or password!")
                 return {status: "false"} 
@@ -70,7 +70,7 @@ module.exports = {
             let user = users.find(el => el.userName == data.login)
             if(await bcrypt.compare(data.password, user.password)){
                 console.log("Login successful!")
-                return {status: "true", username: user.login, name: user.name}
+                return {status: "true", username: user.userName, name: user.name, email: user.email}
             }else{
                 console.log("Not valid username or password!")
                 return {status: "false"} 

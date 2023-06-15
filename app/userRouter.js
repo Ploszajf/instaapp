@@ -51,7 +51,7 @@ const userRouter = async (request, response) => {
         }
 
     //PATCH
-        if(request.url === "/api/user" && request.method == "PATCH"){
+        if(request.url === "/api/user/edit" && request.method == "PATCH"){
         }
 
         }

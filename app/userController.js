@@ -96,7 +96,7 @@ module.exports = {
 
     getuserdata: async (userId) => {
         let user = users.find(el => el.id == userId)
-        return user.get()
+        return (user)
     },
 
     patchuserdata: async (data, id) => {

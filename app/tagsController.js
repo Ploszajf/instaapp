@@ -2,7 +2,7 @@ const { tags, photos, Tag, tagsList } = require("./model");
 
 module.exports = {
     addtags: (json) => {
-            json.tags.forEach(tag => {
+            json.forEach(tag => {
                 let name = tag                
                 if(!tagsList.includes(name)){
                     let id = tags.length
@@ -12,8 +12,6 @@ module.exports = {
                     tagsList.push(name)
                 }
             });
-            console.log(tags)
-            console.log(tagsList)
         return(tags)
     },
     getallrawtags: () => {
@@ -37,6 +35,7 @@ module.exports = {
         return(photos[id]["tags"])
     },
     addtagstophoto: (photoid, tagname) =>{
+        console.log(photoid, tagname)
         if(photos.length > photoid){
         tagname.forEach(el => {
             if(!tagsList.includes(el)){

@@ -26,16 +26,16 @@ const tagsRouter = async (request, response) => {
             getallrawtags()
             response.end()
         } else if(request.url === "/api/tags/" && request.method == "GET"){
-            getalltags()
-            response.end()
+            tags = await getalltags()
+            response.end(JSON.stringify(tags))
         } else if(request.url.match(/\/api\/tags\/([0-9]+)/)&& request.method == "GET"){
             id = request.url.split("/").pop();
             getonetag(id)
             response.end()
         } else if(request.url.match(/\/api\/photos\/tags\/([0-9]+)/) && request.method == "GET"){
             id = request.url.split("/").pop();
-            getphototags(id)
-            response.end()
+            let tags = await getphototags(id)
+            response.end(JSON.stringify(tags))
         }
 
     //PATCH

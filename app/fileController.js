@@ -27,9 +27,10 @@ module.exports = {
     },
     getallphotos: () => {
         let jsonRes = getalljson()
+        console.log(jsonRes)
         return(jsonRes)
     },
-    getonephoto: (id) =>{
+    getonephoto: (id) => {
         let jsonRes = getonejson(id)
         return(jsonRes)
     }

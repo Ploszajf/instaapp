@@ -2,7 +2,7 @@ const { addphoto, delphoto, getallphotos, getonephoto } = require("./fileControl
 const { updatejson } = require("./jsonController")
 
 const fs = require("fs");
-const formidable = require("formidable");
+
 
 const router = async (request, response) => {
 
@@ -20,7 +20,19 @@ const router = async (request, response) => {
             id = request.url.split("/").pop();
             jsonRes = getonephoto(id)
             response.end(JSON.stringify(jsonRes, null, 5))
+            } 
             
+            else if(request.url.match(/\/api\/photos\/getphoto\/([a-zA-Z0-9._]+)/) && request.method == "GET"){
+            url = request.url.split("/").pop();
+            extension = request.url.split(".").pop()
+            if(extension == "jpg"){
+                response.setHeader("Content-Type", "image/jpg");
+            }else if(extension == "mp4"){
+                response.setHeader("Content-Type", "video/mp4");
+            }
+            
+            let path = "upload/" + url;
+            fs.createReadStream(path).pipe(response);
         }
 
     //DELETE
